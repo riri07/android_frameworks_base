@@ -53,6 +53,10 @@ LOCAL_SRC_FILES:= \
 	Rect.cpp \
 	Region.cpp
 
+ifneq ($(BOARD_WITHOUT_PIXEL_FORMAT_YV12),)
+    LOCAL_CFLAGS += -DMISSING_EGL_PIXEL_FORMAT_YV12
+endif
+
 LOCAL_SHARED_LIBRARIES := \
 	libcutils \
 	libutils \
